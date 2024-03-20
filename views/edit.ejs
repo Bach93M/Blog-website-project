@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+<div class="ctn">
+<div class="container">
+  <form action="/change" method="POST">    
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Name:</label>
+      <input type="text" value="<%=editName %>" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Your Name" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput2" class="form-label">Title:</label>
+      <input type="text" value="<%=editTitle %>" class="form-control" name="title" id="exampleFormControlInput2" placeholder="Your Blog Title" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Content:</label>
+      <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="5" required> <%=editContent %> </textarea>
+    </div> 
+
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+</div>
+</div>
+<%- include("partials/footer.ejs") %>

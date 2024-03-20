@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+<div class="ctn">
+<div class="container">
+<% if (blogs.length === 0) { %>
+   <h2>Oops, It's Empty!</h2>
+<% } else { %>
+
+<% for(var i = 0; i < blogs.length; i++) { %>
+<h3> <%= blogs[i].title %></h3>
+<p> <%= blogs[i].content %></p>
+<p> <%= blogs[i].name %></p>
+
+<form class="d-inline-block" action="/edit" method="POST">  
+    <button class="btn btn-outline-warning" type="submit" value="<%= i %>" name="edit">Edit</button>
+</form>
+
+<form class="d-inline-block" action="/delete" method="POST">  
+    <button class="btn btn-outline-danger" type="submit" value="<%= i %>" name="delete">Delete</button>
+</form>
+
+<hr>
+<% }; %>
+
+<% }; %>
+</div>
+</div>
+<%- include("partials/footer.ejs") %>

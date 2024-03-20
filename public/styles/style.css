@@ -1,0 +1,15 @@
+body {
+    background-color: #59c7eb;
+    background-image: linear-gradient(160deg, #59c7eb 0%, #94c8c0 100%);
+
+
+}
+
+.ctn {
+    min-height: 100vh;
+}
+
+header span:hover {
+    color: black !important;
+    background-color: white !important;
+}

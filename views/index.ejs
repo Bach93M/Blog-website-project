@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+<div class="ctn">
+<div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold text-body-emphasis">Share Your Voice with Us!</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">At our blog, we celebrate your stories, insights, and experiences. Join our community of contributors and share your unique perspective with the world. Whether it's a personal anecdote, a professional observation, or a passion you're eager to discuss.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/create"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Create</button></a>
+            <a href="/view"><button type="button" class="btn btn-outline-light btn-lg px-4">View</button></a>
+          </div>
+        </div>
+</div>
+
+<div class="container d-flex flex-column justify-content-center align-items-center">
+<% for(var i = 0; i < blogs.length; i++) { %>
+  <div>
+      <h3 class="text-center"> <%= blogs[i].title %></h3>
+      <p> <%= blogs[i].content %></p>
+      <p><em> <%= blogs[i].name %> </em></p>
+      
+      <form class="text-center" action="/view" method="POST">  
+          <button class="btn btn-info" type="submit" >view</button>
+      </form>
+      
+  </div>  
+      <hr>
+<% }; %>
+</div>
+</div>     
+<%- include("partials/footer.ejs") %>
